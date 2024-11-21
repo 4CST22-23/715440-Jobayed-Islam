@@ -1,0 +1,212 @@
+@font-face {
+  font-family: Poppins;
+  src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+:root {
+  --container-background: #444;
+  --card-background: #fff;
+  --accent-color: #ff5b48;
+  --accent-color-dim: #d81600;
+  --card-max-width: 34rem;
+  --font-poppins: 'Poppins', serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: var(--font-poppins);
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--container-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-card {
+  max-width: var(--card-max-width);
+  min-width: var(--card-max-width);
+  height: 80vh;
+  background-color: var(--card-background);
+  border-radius: 1rem;
+  padding: 1rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 1rem;
+}
+
+.heading {
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.clear-completed-button {
+  border: 0.2rem solid var(--accent-color);
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  color: var(--accent-color);
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.2s background-color ease-in-out;
+}
+
+.clear-completed-button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.input-section {
+  background-color: #eee;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+}
+
+.input-box {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  margin: 0 2rem;
+}
+
+.submit-button {
+  background-color: var(--accent-color);
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: 0.2s background-color ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: var(--accent-color-dim);
+}
+
+.to-do-list {
+  list-style: none;
+  user-select: none;
+  height: calc(100% - 1rem);
+  overflow-y: scroll;
+}
+
+.to-do-list::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.custom-scroll {
+  overflow-y: scroll;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background-color: #eee;
+  border-radius: 0.3rem;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 0.3rem;
+}
+
+.to-do-list li {
+  max-width: 95%;
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  margin: 0 auto 0.5rem auto;
+  border: 1px solid #ddd;
+  box-shadow: 0.1rem 0.1rem 0.2rem 0.09rem #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s box-shadow ease-in-out;
+}
+
+.to-do-list li:hover {
+  box-shadow: 0.3rem 0.3rem 0.6rem 0.1rem #ccc;
+}
+
+.checkbox {
+  background-size: cover;
+  width: 1.5rem;
+}
+
+.list-label {
+  width: 100%;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.label-checked {
+  color: #999;
+  text-decoration: line-through;
+}
+
+
+.delete-button {
+  height: 2rem;
+  width: 2.5rem;
+  font-size: 1.5rem;
+  color: #777;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s background-color ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: #ddd;
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    display: block;
+  }
+
+  .main-card {
+    min-width: 100vw;
+    border-radius: 0;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-header {
+    flex-direction: column;
+  }
+}
